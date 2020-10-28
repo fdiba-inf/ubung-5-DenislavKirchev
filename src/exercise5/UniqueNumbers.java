@@ -19,14 +19,19 @@ public class UniqueNumbers {
 
         int[] uniqueNumbers = new int[numbers.length];
         
-        uniqueNumbers[0] = numbers[0];
-        int uniqueIndex=1;
-        for (int index = 1; index < numbers.length; index++) {
+        
+        int uniqueIndex=0;
+        for (int index = 0; index < numbers.length-1; index++) {
           
-          if(numbers[index]!=numbers[index-1]){
-            uniqueNumbers[uniqueIndex]=numbers[index];
-            uniqueIndex++;
-          }  
+          for(int i = 1; i < numbers.length-index-1; i++){
+            if(numbers[index]==numbers[i]){
+              index++;
+              break;
+            }
+            break;
+          }
+          uniqueNumbers[uniqueIndex]=numbers[index];
+          uniqueIndex++;
         }
 
         String uniqueNumbersAsString = Arrays.toString(uniqueNumbers);
