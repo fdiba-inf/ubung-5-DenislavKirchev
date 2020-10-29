@@ -22,16 +22,14 @@ public class UniqueNumbers {
         
         int uniqueIndex=0;
         for (int index = 0; index < numbers.length-1; index++) {
-          
-          for(int i = 1; i < numbers.length-index-1; i++){
-            if(numbers[index]==numbers[i]){
-              index++;
+          for(int i = 0; index < numbers.length; index++){
+            if(uniqueNumbers[i]==0){
+              uniqueNumbers[i]=numbers[index];
+              break;
+            }else if(uniqueNumbers[i]=numbers[index]){
               break;
             }
-            break;
           }
-          uniqueNumbers[uniqueIndex]=numbers[index];
-          uniqueIndex++;
         }
 
         String uniqueNumbersAsString = Arrays.toString(uniqueNumbers);
