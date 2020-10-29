@@ -20,13 +20,13 @@ public class UniqueNumbers {
         int[] uniqueNumbers = new int[numbers.length];
         
         
-        int uniqueIndex=0;
-        for (int index = 0; index < numbers.length-1; index++) {
-          for(int i = 0; index < numbers.length; index++){
+        
+        for (int index = 0; index < numbers.length; index++) {
+          for(int i = 0; i < numbers.length; i++){
             if(uniqueNumbers[i]==0){
               uniqueNumbers[i]=numbers[index];
               break;
-            }else if(uniqueNumbers[i]=numbers[index]){
+            }else if(uniqueNumbers[i]==numbers[index]){
               break;
             }
           }
